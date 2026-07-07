@@ -13,8 +13,11 @@ public class ChatListener {
         this.teleportManager = teleportManager;
     }
 
+    /**
+     * Обработка сообщения из чата
+     */
     public void onMessage(String message) {
-        if (message.contains("уже подключен")) {
+        if (message != null && message.contains("уже подключен")) {
             this.teleportManager.onMessage(message);
         }
     }
